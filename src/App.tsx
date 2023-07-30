@@ -4,10 +4,12 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Todo from './pages/Todo';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { GlobalStyle } from './UI/GlobalStyle';
 
 function App() {
   return (
     <>
+      <GlobalStyle />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
