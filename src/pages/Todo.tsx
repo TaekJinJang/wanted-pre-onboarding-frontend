@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { TodoStyle as S } from '../UI/TodoStyle';
+import { TodoList } from '../components/TodoList';
 
 function Todo() {
   const navigate = useNavigate();
@@ -12,7 +14,14 @@ function Todo() {
 
   return (
     <>
-      <div>원티드 프리온보딩 인턴십 사전과제</div>
+      <S.TodoContainer>
+        <S.TodoLogoSpan>TODO LIST</S.TodoLogoSpan>
+        <S.TodoInputContainer>
+          <input placeholder="오늘 할 일을 입력해주세요." />
+          <button>확인</button>
+        </S.TodoInputContainer>
+        <TodoList />
+      </S.TodoContainer>
     </>
   );
 }
