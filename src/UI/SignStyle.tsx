@@ -40,11 +40,12 @@ export const SignStyle = {
     height: 35px;
     border: 1px solid gray;
     border-radius: 10px;
-    :disabled {
+    &:disabled {
       background-color: #b8b8b8;
       cursor: not-allowed;
       transition: 0.1s ease-in-out;
     }
+
     transition: 0.1s ease-in-out;
   `,
   SignDescContainer: styled.div`
@@ -57,7 +58,7 @@ export const SignStyle = {
       color: gray;
     }
     a {
-      :hover {
+      &:hover {
         text-decoration: underline;
       }
     }

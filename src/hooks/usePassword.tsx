@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 
 export default function usePassword() {
-  const [passWord, setPassWord] = useState<string>('');
-  const [isConfirmPassWord, setIsConfirmPassWord] = useState<boolean>(false);
+  const [password, setPassword] = useState<string>('');
+  const [isConfirmPassword, setIsConfirmPassword] = useState<boolean>(false);
 
-  function handlePassWord(event: React.ChangeEvent<HTMLInputElement>) {
-    setPassWord(event.currentTarget.value);
-    checkPassWord(event.currentTarget.value);
+  function handlePassword(event: React.ChangeEvent<HTMLInputElement>) {
+    setPassword(event.currentTarget.value);
+    checkPassword(event.currentTarget.value);
   }
 
-  function checkPassWord(passWord: string) {
-    if (passWord.length >= 8) {
-      setIsConfirmPassWord(true);
-    } else setIsConfirmPassWord(false);
+  function checkPassword(password: string) {
+    if (password.length >= 8) {
+      setIsConfirmPassword(true);
+    } else setIsConfirmPassword(false);
   }
 
-  return { passWord, isConfirmPassWord, handlePassWord };
+  return { password, isConfirmPassword, handlePassword };
 }

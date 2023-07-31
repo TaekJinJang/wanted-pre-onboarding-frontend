@@ -1,8 +1,27 @@
 import React from 'react';
 import { SignStyle as S } from '../UI/SignStyle';
-import { Link } from 'react-router-dom';
+import { Link, NavigateFunction, useNavigate } from 'react-router-dom';
+import useEmail from '../hooks/useEmail';
+import usePassword from '../hooks/usePassword';
+import { FetchSignUp } from '../apis/Auth';
 
 function SignUp() {
+  //hooks 디렉토리 참조
+  const { email, isConfirmEmail, handleEmail } = useEmail();
+  const { password, isConfirmPassword, handlePassword } = usePassword();
+  const navigate: NavigateFunction = useNavigate();
+  // useEffect(() => {
+  //   if (localStorage.getItem('loginToken')) {
+  //     navigate('/todo');
+  //   }
+  // });
+
+  async function onClickSignIn() {
+    const { error, message } = await FetchSignUp(email, password);
+    console.log(error, message);
+    alert(message);
+  }
+
   return (
     <>
       <S.SignContainer>
@@ -14,6 +33,8 @@ function SignUp() {
               placeholder="example@email.com"
               type="email"
               data-testid="email-input"
+              value={email}
+              onChange={handleEmail}
             />
           </S.SignInputContainer>
           <S.SignInputContainer>
@@ -22,9 +43,19 @@ function SignUp() {
               placeholder="암호를 입력해주세요."
               type="password"
               data-testid="password-input"
+              value={password}
+              onChange={handlePassword}
             />
           </S.SignInputContainer>
-          <S.SignButton data-testid="signin-button"> 로그인 </S.SignButton>
+          <S.SignButton
+            data-testid="signup-button"
+            type="submit"
+            onClick={onClickSignIn}
+            disabled={!(isConfirmEmail && isConfirmPassword)}
+          >
+            {' '}
+            회원 가입하기{' '}
+          </S.SignButton>
           <S.SignDescContainer>
             <span>계정이 있으신가요?</span>
             <Link to="/signin">로그인</Link>
