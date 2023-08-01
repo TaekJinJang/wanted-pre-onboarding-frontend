@@ -1,11 +1,11 @@
 import React from 'react';
 import { todoInputStyle as S } from '../UI/TodoStyle';
 import { TodoInputType } from '../types/todo.type';
-import useTodoCreate from '../hooks/useTodoCreate';
+import useTodoInput from '../hooks/useTodoInput';
 
 export function TodoInput({ onCreateTodo }: TodoInputType) {
   const token = localStorage.getItem('loginToken');
-  const { todo, setTodo, handleTodoAdd } = useTodoCreate();
+  const { todo, setTodo, handleTodoInput } = useTodoInput();
 
   return (
     <>
@@ -15,7 +15,7 @@ export function TodoInput({ onCreateTodo }: TodoInputType) {
           type="text"
           data-testid="new-todo-input"
           value={todo}
-          onChange={handleTodoAdd}
+          onChange={handleTodoInput}
         />
         <button
           data-testid="new-todo-add-button"

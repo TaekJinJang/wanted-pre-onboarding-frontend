@@ -73,7 +73,6 @@ export const todoListStyle = {
       font-size: 20px;
       color: gray;
       &:hover {
-        text-decoration: underline;
         color: black;
       }
     }
