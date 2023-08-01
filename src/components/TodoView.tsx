@@ -1,21 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { todoListStyle as S } from '../UI/TodoStyle';
 import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
 import { TodoType } from '../types/todo.type';
-import useTodoInput from '../hooks/useTodoInput';
+import { TodoUpdate } from './TodoUpdate';
+import useTodoEdit from '../hooks/useTodoEdit';
 
-export function TodoView({ todo, onDeleteTodo }: TodoType) {
+export function TodoView({ todo, onDeleteTodo, onUpdateTodo }: TodoType) {
   const token = localStorage.getItem('loginToken');
   const [isEditTodo, setIsEditTodo] = useState(false);
+  const [isChecked, setIsChecked] = useState(todo.isCompleted);
+  const [editTodo, setEditTodo] = useState(todo.todo);
+
+  useEffect(() => {
+    setEditTodo(todo.todo);
+  }, [todo]);
 
   return (
     <>
-      <ul>
-        <li>
+      <li>
+        {isEditTodo ? (
+          <TodoUpdate
+            editTodo={editTodo}
+            todoId={todo.id}
+            setIsEditTodo={setIsEditTodo}
+            onUpdateTodo={onUpdateTodo}
+            isCompleted={isChecked}
+          />
+        ) : (
           <S.TodoContainer>
             <S.TodoInputSpanContainer>
-              <input type="checkbox" />
-              <span> {todo.todo}</span>
+              <input
+                type="checkbox"
+                checked={isChecked}
+                onChange={() => setIsChecked(!isChecked)}
+                onClick={() =>
+                  onUpdateTodo(token, todo.id, todo.todo, !isChecked)
+                }
+              />
+              <span> {editTodo}</span>
             </S.TodoInputSpanContainer>
             <S.TodoButtonContainer>
               <button
@@ -36,8 +58,8 @@ export function TodoView({ todo, onDeleteTodo }: TodoType) {
               </button>
             </S.TodoButtonContainer>
           </S.TodoContainer>
-        </li>
-      </ul>
+        )}
+      </li>
     </>
   );
 }

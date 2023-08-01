@@ -50,9 +50,9 @@ export async function FetchTodoLoad(token: string | null) {
 }
 
 // TODO DELETE
-export async function FetchTodoDelete(token: string | null, id: number) {
+export async function FetchTodoDelete(token: string | null, todoId: number) {
   try {
-    const response = await fetch(`${BASE_URL}/todos/${id}`, {
+    const response = await fetch(`${BASE_URL}/todos/${todoId}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -62,6 +62,36 @@ export async function FetchTodoDelete(token: string | null, id: number) {
       throw new Error();
     }
     return { message: '' };
+  } catch (error) {
+    return { error, message: '에러가 발생했습니다.' };
+  }
+}
+
+// TODO UPDATE
+export async function FetchTodoUpdate(
+  token: string | null,
+  todoId: number,
+  editTodo: string,
+  isCompleted: boolean
+) {
+  try {
+    const response = await fetch(`${BASE_URL}/todos/${todoId}`, {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        todo: editTodo,
+        isCompleted: isCompleted,
+      }),
+    });
+    if (!response.ok) {
+      const errorResponse = await response.json();
+      throw errorResponse.statusCode;
+    }
+    const fetchedData = await response.json();
+    return fetchedData;
   } catch (error) {
     return { error, message: '에러가 발생했습니다.' };
   }
