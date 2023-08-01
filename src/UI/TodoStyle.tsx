@@ -15,6 +15,10 @@ export const TodoStyle = {
     font-weight: 800;
     border-bottom: 5px double black;
   `,
+};
+
+//TODO INPUT
+export const todoInputStyle = {
   TodoInputContainer: styled.div`
     display: flex;
     justify-content: space-evenly;
@@ -59,6 +63,26 @@ export const todoListStyle = {
       height: 20%; /* 스크롤바의 길이 */
       background: #e6e6e6; /* 스크롤바의 색상 */
       border-radius: 10px;
+    }
+  `,
+  TodoContainer: styled.div`
+    margin-bottom: 5px;
+    display: flex;
+  `,
+  TodoInputSpanContainer: styled.label`
+    flex: 1;
+    input {
+      margin-right: 10px;
+    }
+  `,
+  TodoButtonContainer: styled.div`
+    button {
+      font-size: 20px;
+      color: gray;
+      &:hover {
+        text-decoration: underline;
+        color: black;
+      }
     }
   `,
 };

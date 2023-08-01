@@ -17,8 +17,7 @@ function SignUp() {
   // });
 
   async function onClickSignIn() {
-    const { error, message } = await FetchSignUp(email, password);
-    console.log(error, message);
+    const { message } = await FetchSignUp(email, password);
     alert(message);
   }
 
