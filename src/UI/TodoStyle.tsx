@@ -53,30 +53,23 @@ export const todoInputStyle = {
 
 //TODO LIST
 export const todoListStyle = {
-  TodoListContainer: styled.div`
-    height: 90%;
-    overflow: auto;
-    ::-webkit-scrollbar {
-      width: 7px; /* 스크롤바의 너비 */
-    }
-    ::-webkit-scrollbar-thumb {
-      height: 20%; /* 스크롤바의 길이 */
-      background: #e6e6e6; /* 스크롤바의 색상 */
-      border-radius: 10px;
-    }
-  `,
+  TodoListContainer: styled.div``,
   TodoContainer: styled.div`
     margin-bottom: 5px;
     display: flex;
   `,
   TodoInputSpanContainer: styled.label`
+    width: 300px;
     flex: 1;
     input {
       margin-right: 10px;
     }
+    overflow: auto;
   `,
   TodoButtonContainer: styled.div`
+    margin-left: 20px;
     button {
+      margin: 5px;
       font-size: 20px;
       color: gray;
       &:hover {

@@ -48,3 +48,21 @@ export async function FetchTodoLoad(token: string | null) {
     return { error, message: '에러가 발생했습니다.' };
   }
 }
+
+// TODO DELETE
+export async function FetchTodoDelete(token: string | null, id: number) {
+  try {
+    const response = await fetch(`${BASE_URL}/todos/${id}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    if (!response.ok) {
+      throw new Error();
+    }
+    return { message: '' };
+  } catch (error) {
+    return { error, message: '에러가 발생했습니다.' };
+  }
+}

@@ -13,7 +13,7 @@ export type TodoListPropsType = {
   //     editTodo: string,
   //     isCompleted: boolean
   //   ) => Promise<void>;
-  //   onDeleteTodo: (token: string | null, todoId: number) => Promise<void>;
+  onDeleteTodo: (token: string | null, todoId: number) => Promise<void>;
 };
 
 export type TodoInputType = {
