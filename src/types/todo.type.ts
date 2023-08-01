@@ -21,20 +21,20 @@ export type TodoInputType = {
 };
 export type TodoType = {
   todo: TodoListType;
-  onUpdateTodo: (
-    token: string | null,
-    id: number,
-    editTodo: string,
-    isCompleted: boolean
-  ) => Promise<void>;
+  // onUpdateTodo: (
+  //   token: string | null,
+  //   id: number,
+  //   editTodo: string,
+  //   isCompleted: boolean
+  // ) => Promise<void>;
   onDeleteTodo: (token: string | null, todoId: number) => Promise<void>;
 };
 
 export type UpdateTodoType = {
-  serverTodo: string | undefined;
-  serverIsCompleted: boolean;
+  todo: string | undefined;
+  isCompleted: boolean;
   todoId: number;
-  setIsEditTodoState: (state: boolean) => void;
+  setIsEditTodo: (state: boolean) => void;
   onUpdateTodo: (
     token: string | null,
     id: number,
