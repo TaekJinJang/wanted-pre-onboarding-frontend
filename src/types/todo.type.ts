@@ -7,27 +7,27 @@ export type TodoListType = {
 
 export type TodoListPropsType = {
   todoList: TodoListType[];
-  onUpdateTodo: (
-    userToken: string | null,
-    id: number,
-    editTodo: string,
-    isCompleted: boolean
-  ) => Promise<void>;
-  onDeleteTodo: (userToken: string | null, todoId: number) => Promise<void>;
+  //   onUpdateTodo: (
+  //     token: string | null,
+  //     id: number,
+  //     editTodo: string,
+  //     isCompleted: boolean
+  //   ) => Promise<void>;
+  //   onDeleteTodo: (token: string | null, todoId: number) => Promise<void>;
 };
 
 export type TodoInputType = {
-  onCreateTodo: (userToken: string | null, userTodo: string) => void;
+  onCreateTodo: (token: string | null, todo: string) => void;
 };
 export type TodoType = {
   todo: TodoListType;
   onUpdateTodo: (
-    userToken: string | null,
+    token: string | null,
     id: number,
     editTodo: string,
     isCompleted: boolean
   ) => Promise<void>;
-  onDeleteTodo: (userToken: string | null, todoId: number) => Promise<void>;
+  onDeleteTodo: (token: string | null, todoId: number) => Promise<void>;
 };
 
 export type UpdateTodoType = {
@@ -36,7 +36,7 @@ export type UpdateTodoType = {
   todoId: number;
   setIsEditTodoState: (state: boolean) => void;
   onUpdateTodo: (
-    userToken: string | null,
+    token: string | null,
     id: number,
     editTodo: string,
     isCompleted: boolean
