@@ -6,7 +6,6 @@ import useTodoInput from '../hooks/useTodoInput';
 export function TodoInput({ onCreateTodo }: TodoInputType) {
   const token = localStorage.getItem('loginToken');
   const { todo, setTodo, handleTodoInput } = useTodoInput();
-  console.log(todo);
   return (
     <>
       <S.TodoInputContainer>

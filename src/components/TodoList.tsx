@@ -7,7 +7,6 @@ export function TodoList({
   onDeleteTodo,
   onUpdateTodo,
 }: TodoListPropsType) {
-  console.log(todoList);
   return (
     <>
       <ul>

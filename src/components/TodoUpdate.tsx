@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { todoListStyle as S } from '../UI/TodoStyle';
 import { AiFillCheckCircle } from 'react-icons/ai';
 import { GiCancel } from 'react-icons/gi';
 import { UpdateTodoType } from '../types/todo.type';
-import useTodoEdit from '../hooks/useTodoEdit';
 import useTodoInput from '../hooks/useTodoInput';
 
 export function TodoUpdate({
@@ -15,10 +14,10 @@ export function TodoUpdate({
 }: UpdateTodoType) {
   const token = localStorage.getItem('loginToken');
   const { todo, setTodo, handleTodoInput } = useTodoInput();
+
   useEffect(() => {
     editTodo && setTodo(editTodo);
-  }, []);
-
+  }, [editTodo, setTodo]);
   return (
     <>
       <S.TodoContainer key={todoId}>
@@ -36,7 +35,6 @@ export function TodoUpdate({
             type="button"
             title="제출"
             data-testid="submit-button"
-            // onChange={() => handleTodoInput}
             onClick={() => {
               setIsEditTodo(false);
               onUpdateTodo(token, todoId, todo, isCompleted);

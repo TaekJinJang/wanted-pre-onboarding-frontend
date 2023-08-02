@@ -24,22 +24,27 @@ function Todo() {
 
   useEffect(() => {
     onLoadTodo();
+    // eslint-disable-next-line
   }, []);
 
+  //CREATE_TODO
   async function onCreateTodo(token: string | null, todo: string) {
     const { error, message } = await FetchTodoCreate(token, todo);
     if (error) alert(message);
     onLoadTodo();
   }
+  //LOAD_TODO
   async function onLoadTodo() {
     const loadTodo = await FetchTodoLoad(token);
     setTodoList(loadTodo);
   }
+  //DELETE_TODO
   async function onDeleteTodo(token: string | null, todoId: number) {
     const { error, message } = await FetchTodoDelete(token, todoId);
     if (error) alert(message);
     onLoadTodo();
   }
+  //UPDATE_TODO
   async function onUpdateTodo(
     token: string | null,
     todoId: number,

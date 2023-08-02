@@ -3,7 +3,6 @@ import { todoListStyle as S } from '../UI/TodoStyle';
 import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
 import { TodoType } from '../types/todo.type';
 import { TodoUpdate } from './TodoUpdate';
-import useTodoEdit from '../hooks/useTodoEdit';
 
 export function TodoView({ todo, onDeleteTodo, onUpdateTodo }: TodoType) {
   const token = localStorage.getItem('loginToken');
