@@ -29,7 +29,7 @@ export function TodoView({ todo, onDeleteTodo, onUpdateTodo }: TodoType) {
         ) : (
           <S.TodoContainer>
             <S.TodoInputSpanContainer>
-              <input
+              <S.TodoCheckBox
                 type="checkbox"
                 checked={isChecked}
                 onChange={() => setIsChecked(!isChecked)}

@@ -23,8 +23,8 @@ export function TodoUpdate({
     <>
       <S.TodoContainer key={todoId}>
         <S.TodoInputSpanContainer>
-          <input type="checkbox" checked={isCompleted} readOnly />
-          <input
+          <S.TodoCheckBox type="checkbox" checked={isCompleted} readOnly />
+          <S.TodoEditInput
             type="text"
             value={todo}
             onChange={handleTodoInput}

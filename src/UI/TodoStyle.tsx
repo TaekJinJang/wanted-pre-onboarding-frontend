@@ -58,13 +58,20 @@ export const todoListStyle = {
     margin-bottom: 5px;
     display: flex;
   `,
+
   TodoInputSpanContainer: styled.label`
     width: 300px;
     flex: 1;
-    input {
-      margin-right: 10px;
-    }
     overflow: auto;
+  `,
+  TodoCheckBox: styled.input`
+    margin-right: 10px;
+  `,
+  TodoEditInput: styled.input`
+    padding-left: 5px;
+    font-size: 16px;
+    border: 1px solid gray;
+    border-radius: 5px;
   `,
   TodoButtonContainer: styled.div`
     margin-left: 20px;
