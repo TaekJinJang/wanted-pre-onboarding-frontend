@@ -1,4 +1,3 @@
-import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { BASE_URL } from './config';
 
 export async function FetchSignIn(email: string, password: string) {
@@ -31,7 +30,6 @@ export async function FetchSignIn(email: string, password: string) {
 }
 
 export async function FetchSignUp(email: string, password: string) {
-  const navigate: NavigateFunction = useNavigate();
   try {
     const response = await fetch(`${BASE_URL}/auth/signup`, {
       method: 'POST',
@@ -43,7 +41,7 @@ export async function FetchSignUp(email: string, password: string) {
     if (!response.ok) {
       throw response.status;
     }
-    navigate('/signin');
+
     return { message: '회원가입이 완료되었습니다.' };
   } catch (error) {
     if (error === 400) {

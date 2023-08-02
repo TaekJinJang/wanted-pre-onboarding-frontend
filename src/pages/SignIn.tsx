@@ -10,14 +10,15 @@ function SignIn() {
   const { email, isConfirmEmail, handleEmail } = useEmail();
   const { password, isConfirmPassword, handlePassword } = usePassword();
   const navigate: NavigateFunction = useNavigate();
-  // useEffect(() => {
-  //   if (localStorage.getItem('loginToken')) {
-  //     navigate('/todo');
-  //   }
-  // });
+  useEffect(() => {
+    if (localStorage.getItem('loginToken')) {
+      navigate('/todo');
+    }
+  });
   async function onClickSignIn() {
-    const { message } = await FetchSignIn(email, password);
+    const { error, message } = await FetchSignIn(email, password);
     alert(message);
+    if (!error) navigate('/signin');
   }
 
   return (

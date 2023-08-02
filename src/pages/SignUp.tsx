@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SignStyle as S } from '../UI/SignStyle';
 import { Link, NavigateFunction, useNavigate } from 'react-router-dom';
 import useEmail from '../hooks/useEmail';
@@ -10,15 +10,16 @@ function SignUp() {
   const { email, isConfirmEmail, handleEmail } = useEmail();
   const { password, isConfirmPassword, handlePassword } = usePassword();
   const navigate: NavigateFunction = useNavigate();
-  // useEffect(() => {
-  //   if (localStorage.getItem('loginToken')) {
-  //     navigate('/todo');
-  //   }
-  // });
+  useEffect(() => {
+    if (localStorage.getItem('loginToken')) {
+      navigate('/todo');
+    }
+  });
 
   async function onClickSignIn() {
-    const { message } = await FetchSignUp(email, password);
+    const { error, message } = await FetchSignUp(email, password);
     alert(message);
+    if (!error) navigate('/signin');
   }
 
   return (

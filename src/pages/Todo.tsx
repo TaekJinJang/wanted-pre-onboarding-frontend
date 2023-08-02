@@ -18,7 +18,7 @@ function Todo() {
 
   useEffect(() => {
     if (!token) {
-      navigate('/');
+      navigate('/signin');
     }
   });
 
