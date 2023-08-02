@@ -7,7 +7,7 @@ $ npm start
 ```
 ### 데모 영상
 - 배포 링크로 대체
-- www.~~~
+- https://majestic-semifreddo-01e37f.netlify.app
 ### Library
 - typescript
 - styled-components
