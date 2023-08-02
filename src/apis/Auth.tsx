@@ -1,5 +1,5 @@
 import { BASE_URL } from './config';
-
+// Invalid Hook Call Error 에러로 인해 최상위 Components 에서 navigate로 변경
 export async function FetchSignIn(email: string, password: string) {
   try {
     const response = await fetch(`${BASE_URL}/auth/signin`, {
