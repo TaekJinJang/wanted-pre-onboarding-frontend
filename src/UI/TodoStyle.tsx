@@ -15,6 +15,20 @@ export const TodoStyle = {
     font-weight: 800;
     border-bottom: 5px double black;
   `,
+  TodoSignOutButton: styled.button`
+    margin-left: 350px;
+    border: 1px solid gray;
+    width: 70px;
+    height: 25px;
+    border-radius: 10px;
+    &:hover {
+      background-color: #b8b8b8;
+
+      transition: 0.1s ease-in-out;
+    }
+
+    transition: 0.1s ease-in-out;
+  `,
 };
 
 //TODO INPUT

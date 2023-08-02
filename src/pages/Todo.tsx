@@ -27,6 +27,12 @@ function Todo() {
     // eslint-disable-next-line
   }, []);
 
+  //SIGN_OUT_BUTTON
+  function handleSignOut() {
+    localStorage.removeItem('loginToken');
+    navigate('/');
+  }
+
   //CREATE_TODO
   async function onCreateTodo(token: string | null, todo: string) {
     const { error, message } = await FetchTodoCreate(token, todo);
@@ -64,6 +70,9 @@ function Todo() {
   return (
     <>
       <S.TodoContainer>
+        <S.TodoSignOutButton onClick={handleSignOut}>
+          로그아웃
+        </S.TodoSignOutButton>
         <S.TodoLogoSpan>TODO LIST</S.TodoLogoSpan>
         <TodoInput onCreateTodo={onCreateTodo} />
         <TodoList
