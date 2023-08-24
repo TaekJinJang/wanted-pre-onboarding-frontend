@@ -1,4 +1,4 @@
-import {TodoProps} from '../types/Todo.type';
+import {TodoProps} from '../../types/Todo.type';
 
 interface ItemProps {
     setTodoList: (id: number, value: string) => void;
@@ -8,9 +8,8 @@ interface ItemProps {
 function TodoList({setTodoList, item}: ItemProps) {
     return (
         <div>
-            <input checked />
             <div>
-                <input type='checkbox' checked={true} />
+                <input type='checkbox' checked={item.isCompleted} />
                 <span>{item.todo}</span>
             </div>
             <div>

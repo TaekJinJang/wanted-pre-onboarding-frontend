@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {TodoProps} from '../types/Todo.type';
-import TodoList from '../components/TodoList';
+import TodoList from '../components/todo/TodoList';
 import {useTodoState} from '../contexts/TodoContext';
 
 function TodoListContainer() {

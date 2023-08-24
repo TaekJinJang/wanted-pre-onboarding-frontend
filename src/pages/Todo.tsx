@@ -1,11 +1,8 @@
 import {TodoStyle as S} from '../styles/Todo.styled';
-import TodoIndex from '../components/TodoIndex';
+import TodoIndex from '../components/todo/index';
 import {TodoProvider} from '../contexts/TodoContext';
 
 function Todo() {
-    const accessToken = localStorage.getItem('accessToken');
-
-    console.error(accessToken);
     return (
         <>
             <S.TodoHeader>

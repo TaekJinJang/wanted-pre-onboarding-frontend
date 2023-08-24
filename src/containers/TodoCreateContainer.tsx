@@ -1,5 +1,5 @@
 import useTodo from '../hooks/useTodo';
-import TodoCreate from '../components/TodoCreate';
+import TodoCreate from '../components/todo/TodoCreate';
 import {useInput} from '../hooks/useInput';
 
 function TodoCreateContainer() {

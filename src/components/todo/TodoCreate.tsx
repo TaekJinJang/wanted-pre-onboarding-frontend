@@ -1,4 +1,4 @@
-import {TodoStyle as S} from '../styles/Todo.styled';
+import {TodoStyle as S} from '../../styles/Todo.styled';
 interface Props {
     todo: string;
     handleTodoInput: (event: React.ChangeEvent<HTMLInputElement>) => void;
