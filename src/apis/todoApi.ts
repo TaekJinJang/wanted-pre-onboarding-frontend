@@ -6,7 +6,7 @@ export async function getTodos() {
     return response;
 }
 
-export async function createTodo(todo: {todo: string}) {
+export async function createTodo(todo: string) {
     const response = await api.post(API_KEY, '/todos', todo, true);
     return response;
 }

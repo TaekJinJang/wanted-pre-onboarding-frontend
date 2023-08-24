@@ -16,7 +16,7 @@ const useTodoList = () => {
 
     const createTodo = async (value: string) => {
         try {
-            const res = await todoApi.createTodo({todo: value});
+            const res = await todoApi.createTodo(value);
             todoDispatch({type: 'CREATE', payload: res.data});
         } catch {
             alert(ERROR_MESSAGE);
