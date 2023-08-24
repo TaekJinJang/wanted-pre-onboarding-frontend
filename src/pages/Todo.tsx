@@ -1,4 +1,5 @@
 import {TodoStyle as S} from '../styles/Todo.styled';
+import TodoCreate from '../components/TodoCreate';
 
 function Todo() {
     return (
@@ -10,10 +11,7 @@ function Todo() {
                         <div>로그아웃</div>
                     </S.TodoLogOut>
                 </S.TodoHeader>
-                <S.TodoInputContainer>
-                    <input></input>
-                    <button>추가</button>
-                </S.TodoInputContainer>
+                <TodoCreate />
             </S.TodoContainer>
             <S.TodoContainer>
                 <S.TodoInputSpanContainer>
