@@ -6,8 +6,14 @@ $ npm install
 $ npm start
 ```
 ## 데모 영상
-- 배포 링크로 대체
-- https://majestic-semifreddo-01e37f.netlify.app
+- 배포 링크 : https://majestic-semifreddo-01e37f.netlify.app
+
+
+
+
+  |회원가입(`/signup`)|로그인(`/signin`)|투두(`/todo`)|
+  |:---:|:---:|:---:|
+  |![signup](https://github.com/TaekJinJang/wanted-pre-onboarding-frontend/assets/93184838/2e97e99d-72bd-4cac-a828-ccdd4652d776)|![signin](https://github.com/TaekJinJang/wanted-pre-onboarding-frontend/assets/93184838/23cfddc5-b2fa-4730-a6ed-e20e80dfb265)|![todo](https://github.com/TaekJinJang/wanted-pre-onboarding-frontend/assets/93184838/957318f8-4820-4717-aaf6-57116d2979dc)|
 ## Library
 - typescript
 - styled-components
