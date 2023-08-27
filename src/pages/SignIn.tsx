@@ -3,9 +3,9 @@ import * as S from '../styles/Auth.styled';
 
 const SignIn = () => {
     return (
-        <S.AuthContainer>
+        <S.AuthPageStyled>
             <AuthContainer title={'로그인'} />
-        </S.AuthContainer>
+        </S.AuthPageStyled>
     );
 };
 

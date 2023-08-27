@@ -6,12 +6,14 @@ import * as S from '../styles/Auth.styled';
 const AuthContainer = ({title}: {title: string}) => {
     return (
         <>
-            <AuthTitle title={title} />
-            <AuthInput />
-            <S.AuthButton type={'submit'} testid='button-input'>
-                로그인
-            </S.AuthButton>
-            <AuthFooter />
+            <S.AuthContainerStyled>
+                <AuthTitle title={title} />
+                <AuthInput />
+                <S.AuthButtonStyled type={'submit'} testid='button-input'>
+                    로그인
+                </S.AuthButtonStyled>
+                <AuthFooter />
+            </S.AuthContainerStyled>
         </>
     );
 };

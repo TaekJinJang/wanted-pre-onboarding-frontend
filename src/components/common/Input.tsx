@@ -13,7 +13,7 @@ export interface InputProps {
 
 const Input = ({label, testid, id, type, placeholder, value, onChange}: InputProps) => {
     return (
-        <S.CommonInput>
+        <S.CommonInputStyled>
             <label htmlFor={id}>{label}</label>
             <input
                 id={id}
@@ -23,7 +23,7 @@ const Input = ({label, testid, id, type, placeholder, value, onChange}: InputPro
                 value={value}
                 onChange={onChange}
             />
-        </S.CommonInput>
+        </S.CommonInputStyled>
     );
 };
 
