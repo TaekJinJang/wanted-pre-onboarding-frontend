@@ -7,11 +7,11 @@ const Header = () => {
             <S.Logo to='/todo'>TODO</S.Logo>
             <S.Menu>
                 <>
-                    <NavLink to='/signup' className={({isActive}) => (isActive ? 'active' : '')}>
-                        회원가입
-                    </NavLink>
                     <NavLink to='/signin' className={({isActive}) => (isActive ? 'active' : '')}>
                         로그인
+                    </NavLink>
+                    <NavLink to='/signup' className={({isActive}) => (isActive ? 'active' : '')}>
+                        회원가입
                     </NavLink>
                 </>
             </S.Menu>
