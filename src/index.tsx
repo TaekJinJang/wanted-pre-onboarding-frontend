@@ -4,6 +4,7 @@ import './index.css';
 import './styles/reset.css';
 import {RouterProvider} from 'react-router-dom';
 import {Router} from './Router';
+import './styles/global.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
