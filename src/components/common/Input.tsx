@@ -7,8 +7,8 @@ export interface InputProps {
     type: string;
     testid: string;
     placeholder?: string;
-    value?: string;
-    onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+    value: string;
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input = ({label, testid, id, type, placeholder, value, onChange}: InputProps) => {
