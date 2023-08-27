@@ -1,5 +1,6 @@
 import {AuthInputProps} from '../../types/AuthTypes';
 import Input from '../common/Input';
+import AuthErrorMessage from './AuthErrorMessage';
 
 const AuthInput = ({
     email,
@@ -8,7 +9,6 @@ const AuthInput = ({
     handlePassword,
     errorMessage,
 }: AuthInputProps) => {
-    console.info(errorMessage);
     return (
         <div>
             <Input
@@ -20,6 +20,7 @@ const AuthInput = ({
                 value={email}
                 onChange={handleEmail}
             />
+            <AuthErrorMessage message={email === '' ? '' : errorMessage.emailError} />
 
             <Input
                 label='비밀번호'
@@ -30,6 +31,7 @@ const AuthInput = ({
                 value={password}
                 onChange={handlePassword}
             />
+            <AuthErrorMessage message={email === '' ? '' : errorMessage.passwordError} />
         </div>
     );
 };

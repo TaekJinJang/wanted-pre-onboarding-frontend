@@ -53,3 +53,10 @@ export const AuthButtonStyled = styled(Button)`
         cursor: default;
     }
 `;
+
+export const AuthErrorMessageStyled = styled.div`
+    margin: 5px 0 20px 0;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--red);
+`;
