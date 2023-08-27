@@ -1,9 +1,7 @@
-import AuthTitle from "../components/Auth/AuthTitle"
+import AuthTitle from '../components/Auth/AuthTitle';
 
 const SignIn = () => {
-    return (
-        <AuthTitle />
-    )
-}
+    return <AuthTitle />;
+};
 
-export default SignIn
+export default SignIn;
