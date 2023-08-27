@@ -1,4 +1,5 @@
 import {styled} from 'styled-components';
+import Button from '../components/common/Button';
 
 export const AuthContainer = styled.div`
     width: 100%;
@@ -11,4 +12,40 @@ export const AuthTitle = styled.div`
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 25.44px;
+`;
+export const AuthFooter = styled.div`
+    padding: 16px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    span {
+        color: var(--dark-gray);
+    }
+    .link {
+        color: var(--blue);
+    }
+`;
+export const AuthButton = styled(Button)`
+    margin: 10px 0;
+    padding: 14.5px 120.4px 17.5px 120.6px;
+    width: 300px;
+    height: 50px;
+
+    line-height: 170%;
+
+    border: none;
+    border-radius: 25px;
+
+    background: var(--blue);
+    color: var(--white);
+
+    cursor: pointer;
+
+    &:disabled {
+        background: var(--light-gray);
+        color: var(--dark-gray);
+        cursor: default;
+    }
 `;

@@ -1,5 +1,7 @@
+import {Link} from 'react-router-dom';
 import * as S from '../../styles/Auth.styled';
 import Input from '../common/Input';
+import ROUTES from '../../constants/routes';
 
 const Auth = () => {
     return (
@@ -25,6 +27,15 @@ const Auth = () => {
                     />
                 </div>
             </form>
+            <S.AuthButton type={'submit'} testid='button-input'>
+                로그인
+            </S.AuthButton>
+            <S.AuthFooter>
+                <span>아직 회원이 아니신가요?</span>
+                <Link to={ROUTES.SIGNUP} className='link'>
+                    회원가입
+                </Link>
+            </S.AuthFooter>
         </S.AuthContainer>
     );
 };
