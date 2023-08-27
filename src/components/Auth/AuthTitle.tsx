@@ -2,9 +2,9 @@ import * as S from '../../styles/Auth.styled';
 
 const AuthTitle = ({title}: {title: string}) => {
     return (
-        <S.AuthTitle>
+        <S.AuthTitleStyled>
             <h1>{title}</h1>
-        </S.AuthTitle>
+        </S.AuthTitleStyled>
     );
 };
 

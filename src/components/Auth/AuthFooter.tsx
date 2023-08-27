@@ -5,12 +5,12 @@ import ROUTES from '../../constants/routes';
 
 const AuthFooter = () => {
     return (
-        <S.AuthFooter>
+        <S.AuthFooterStyled>
             <span>아직 회원이 아니신가요?</span>
             <Link to={ROUTES.SIGNUP} className='link'>
                 회원가입
             </Link>
-        </S.AuthFooter>
+        </S.AuthFooterStyled>
     );
 };
 
