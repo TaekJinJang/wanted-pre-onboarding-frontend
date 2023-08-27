@@ -1,14 +1,13 @@
 import {Link} from 'react-router-dom';
 import * as S from '../../styles/Auth.styled';
+import {AuthFooterProps} from '../../types/AuthTypes';
 
-import ROUTES from '../../constants/routes';
-
-const AuthFooter = () => {
+const AuthFooter = ({text, type, route}: AuthFooterProps) => {
     return (
         <S.AuthFooterStyled>
-            <span>아직 회원이 아니신가요?</span>
-            <Link to={ROUTES.SIGNUP} className='link'>
-                회원가입
+            <span>{text}</span>
+            <Link to={route} className='link'>
+                {type}
             </Link>
         </S.AuthFooterStyled>
     );

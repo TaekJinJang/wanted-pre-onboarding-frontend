@@ -1,9 +1,9 @@
-import {AxiosResponse} from 'axios'
+import {AxiosResponse} from 'axios';
 
 export type AuthAPI = ({email, password}: AuthRequestProps) => Promise<AxiosResponse>;
 
 export interface AuthPageProps {
-    api: AuthAPI;
+    // api: AuthAPI;
     title: string;
     navigation: string;
     link: string;
@@ -11,8 +11,8 @@ export interface AuthPageProps {
     footerType: string;
     testid: string;
     footerText: string;
-    successMsg: string;
-    errorMsg: string;
+    // successMsg: string;
+    // errorMsg: string;
 }
 
 export interface AuthFooterProps {
