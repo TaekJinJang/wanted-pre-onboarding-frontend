@@ -1,8 +1,9 @@
 import {Link} from 'react-router-dom';
 import * as S from '../../styles/Auth.styled';
 import {AuthFooterProps} from '../../types/AuthTypes';
+import {memo} from 'react';
 
-const AuthFooter = ({text, type, route}: AuthFooterProps) => {
+const AuthFooter = memo(({text, type, route}: AuthFooterProps) => {
     return (
         <S.AuthFooterStyled>
             <span>{text}</span>
@@ -11,6 +12,6 @@ const AuthFooter = ({text, type, route}: AuthFooterProps) => {
             </Link>
         </S.AuthFooterStyled>
     );
-};
+});
 
 export default AuthFooter;
