@@ -1,4 +1,4 @@
-import {createTodo, getTodos} from '../apis/Todo';
+import {createTodo} from '../apis/Todo';
 import TodoCreate from '../components/Todo/TodoCreate';
 
 import * as S from '../styles/Todo.styled';

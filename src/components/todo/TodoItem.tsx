@@ -1,13 +1,11 @@
-import * as TodoType from '../../types/TodoTypes';
+// import * as TodoType from '../../types/TodoTypes';
 import * as S from '../../styles/Todo.styled';
 
-const TodoItem = ({item}: TodoType.Item) => {
-    const {id, todo, isCompleted} = item;
-
+const TodoItem = () => {
     return (
         <li>
             <S.TodoItemStyled>
-                <span>{id}</span>
+                <span>todo</span>
             </S.TodoItemStyled>
         </li>
     );
