@@ -3,20 +3,31 @@ import {useTodoDispatch} from '../../contexts/TodoContext';
 import {useCallback} from 'react';
 import * as TodoAPI from '../../apis/Todo';
 import ROUTES from '../../constants/routes';
+import {INVALID_TOKEN_MSG} from '../../constants/message';
 
-const TodoController = () => {
+interface TodoControllerProps {
+    setIsLoading: (value: boolean) => void;
+}
+
+const TodoController = ({setIsLoading}: TodoControllerProps) => {
     const navigate = useNavigate();
     const todoDispatch = useTodoDispatch();
+    const handleErrorResponse = useCallback(() => {
+        alert(INVALID_TOKEN_MSG);
+        localStorage.removeItem('accessToken');
+        navigate(ROUTES.SIGNIN);
+    }, [navigate]);
 
     const getTodo = useCallback(async () => {
         try {
             const res = await TodoAPI.getTodos();
             todoDispatch({type: 'GET', payload: res.data});
         } catch (e: unknown) {
-            console.error('API호출 실패');
-            navigate(ROUTES.SIGNIN);
+            handleErrorResponse();
+        } finally {
+            setIsLoading(false);
         }
-    }, [todoDispatch]);
+    }, [handleErrorResponse, setIsLoading, todoDispatch]);
 
     const createTodo = useCallback(
         async (todo: string) => {
@@ -24,10 +35,12 @@ const TodoController = () => {
                 const res = await TodoAPI.createTodo({todo: todo});
                 todoDispatch({type: 'CREATE', payload: res.data});
             } catch (e: unknown) {
-                console.error('API호출 실패');
+                handleErrorResponse();
+            } finally {
+                setIsLoading(false);
             }
         },
-        [todoDispatch]
+        [handleErrorResponse, setIsLoading, todoDispatch]
     );
 
     const updateTodo = useCallback(
@@ -36,10 +49,12 @@ const TodoController = () => {
                 const res = await TodoAPI.updateTodo(id, {todo: todo, isCompleted});
                 todoDispatch({type: 'UPDATE', payload: res.data});
             } catch (e: unknown) {
-                console.error('API호출 실패');
+                handleErrorResponse();
+            } finally {
+                setIsLoading(false);
             }
         },
-        [todoDispatch]
+        [handleErrorResponse, setIsLoading, todoDispatch]
     );
 
     const deleteTodo = useCallback(
@@ -48,10 +63,12 @@ const TodoController = () => {
                 await TodoAPI.deleteTodo(id);
                 todoDispatch({type: 'DELETE', payload: id});
             } catch (e: unknown) {
-                console.error('API호출 실패');
+                handleErrorResponse();
+            } finally {
+                setIsLoading(false);
             }
         },
-        [todoDispatch]
+        [handleErrorResponse, setIsLoading, todoDispatch]
     );
     return {getTodo, createTodo, updateTodo, deleteTodo};
 };
