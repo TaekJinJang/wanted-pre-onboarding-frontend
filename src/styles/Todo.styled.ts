@@ -28,3 +28,16 @@ export const TodoCreateFormStyled = styled.form`
         background-color: #36f;
     }
 `;
+
+export const TodoItemStyled = styled.div`
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+        padding: 4px;
+        margin: 0 10px;
+        text-decoration: ${props => (props.className === 'true' ? 'line-through' : 'none')};
+    }
+`;
