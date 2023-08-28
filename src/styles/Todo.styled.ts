@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Button from '../components/common/Button';
 
 export const TodoContainerStyled = styled.div`
     width: 480px;
@@ -35,6 +36,12 @@ export const TodoItemStyled = styled.div`
     justify-content: space-between;
     align-items: center;
 
+    input {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
     span {
         padding: 4px;
         margin: 0 10px;
@@ -63,5 +70,18 @@ export const TodoListStyled = styled.ul`
         cursor: pointer;
         border-radius: 100px;
         border: 1px solid;
+    }
+`;
+
+export const TodoButtonStyled = styled(Button)`
+    opacity: ${props => props.isDisabled && '40%'};
+
+    &.modify {
+        color: #36f;
+        background-color: #ffffff;
+        border-color: #36f;
+    }
+    &.delete {
+        color: gray;
     }
 `;
