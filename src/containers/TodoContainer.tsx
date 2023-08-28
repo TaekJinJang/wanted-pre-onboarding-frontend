@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import TodoController from '../components/Todo/TodoController';
 import TodoCreate from '../components/Todo/TodoCreate';
 
@@ -8,7 +8,7 @@ import TodoItem from '../components/Todo/TodoItem';
 
 const TodoContainer = () => {
     const todoState = useTodoState();
-    console.info(todoState);
+    const [updateId, setUpdateId] = useState<number | null>(null);
     const {getTodo, createTodo, updateTodo, deleteTodo} = TodoController();
 
     useEffect(() => {
@@ -25,6 +25,8 @@ const TodoContainer = () => {
                         item={todo}
                         updateTodo={updateTodo}
                         deleteTodo={deleteTodo}
+                        updateId={updateId}
+                        setUpdateId={setUpdateId}
                     />
                 ))}
             </S.TodoListStyled>
