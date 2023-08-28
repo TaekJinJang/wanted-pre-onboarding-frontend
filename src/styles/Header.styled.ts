@@ -25,7 +25,8 @@ export const Logo = styled(Link)`
 `;
 
 export const Menu = styled.div`
-    a {
+    a,
+    div {
         padding: 10px;
         text-decoration: none;
         color: gray;
