@@ -36,17 +36,17 @@ export const TodoItemStyled = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    input {
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
-    }
-
     span {
         padding: 4px;
         margin: 0 10px;
         text-decoration: ${props => (props.className === 'true' ? 'line-through' : 'none')};
     }
+`;
+
+export const TodoCheckStyled = styled.input`
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 `;
 
 export const TodoListStyled = styled.ul`
@@ -76,12 +76,30 @@ export const TodoListStyled = styled.ul`
 export const TodoButtonStyled = styled(Button)`
     opacity: ${props => props.isDisabled && '40%'};
 
-    &.modify {
+    &.modify,
+    &.submit {
         color: #36f;
         background-color: #ffffff;
         border-color: #36f;
     }
-    &.delete {
+    &.delete,
+    &.cancel {
         color: gray;
     }
+`;
+
+export const TodoUpdateInputStyled = styled.input`
+    font-size: 20px;
+    color: #888888;
+    flex: 1;
+    padding: 4px;
+    margin: 0 8px;
+    cursor: revert;
+`;
+
+export const TodoUpdateFormStyled = styled.form`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
 `;
