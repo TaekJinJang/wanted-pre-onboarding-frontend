@@ -9,7 +9,7 @@ import TodoItem from '../components/Todo/TodoItem';
 const TodoContainer = () => {
     const todoState = useTodoState();
     console.info(todoState);
-    const {getTodo, createTodo} = TodoController();
+    const {getTodo, createTodo, updateTodo, deleteTodo} = TodoController();
 
     useEffect(() => {
         getTodo();
@@ -20,7 +20,12 @@ const TodoContainer = () => {
             <TodoCreate createTodo={createTodo} />
             <S.TodoListStyled>
                 {todoState.map(todo => (
-                    <TodoItem key={todo.id} item={todo} />
+                    <TodoItem
+                        key={todo.id}
+                        item={todo}
+                        updateTodo={updateTodo}
+                        deleteTodo={deleteTodo}
+                    />
                 ))}
             </S.TodoListStyled>
         </S.TodoContainerStyled>
