@@ -4,6 +4,7 @@ import TodoCreate from '../components/Todo/TodoCreate';
 
 import * as S from '../styles/Todo.styled';
 import {useTodoState} from '../contexts/TodoContext';
+import TodoItem from '../components/Todo/TodoItem';
 
 const TodoContainer = () => {
     const todoState = useTodoState();
@@ -17,6 +18,11 @@ const TodoContainer = () => {
     return (
         <S.TodoContainerStyled>
             <TodoCreate createTodo={createTodo} />
+            <S.TodoListStyled>
+                {todoState.map(todo => (
+                    <TodoItem key={todo.id} item={todo} />
+                ))}
+            </S.TodoListStyled>
         </S.TodoContainerStyled>
     );
 };

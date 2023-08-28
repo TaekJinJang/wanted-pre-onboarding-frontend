@@ -41,3 +41,27 @@ export const TodoItemStyled = styled.div`
         text-decoration: ${props => (props.className === 'true' ? 'line-through' : 'none')};
     }
 `;
+
+export const TodoListStyled = styled.ul`
+    font-size: 20px;
+    padding: 0;
+    list-style: none;
+
+    label {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        cursor: pointer;
+    }
+
+    button {
+        font-size: 16px;
+        font-weight: 600;
+        width: 50px;
+        padding: 4px 8px;
+        margin: 0 4px;
+        cursor: pointer;
+        border-radius: 100px;
+        border: 1px solid;
+    }
+`;
