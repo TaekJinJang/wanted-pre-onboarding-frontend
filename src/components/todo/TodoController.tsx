@@ -29,7 +29,31 @@ const TodoController = () => {
         },
         [todoDispatch]
     );
-    return {getTodo, createTodo};
+
+    const updateTodo = useCallback(
+        async (id: number, todo: string, isCompleted: boolean) => {
+            try {
+                const res = await TodoAPI.updateTodo(id, {todo: todo, isCompleted});
+                todoDispatch({type: 'UPDATE', payload: res.data});
+            } catch (e: unknown) {
+                console.error('API호출 실패');
+            }
+        },
+        [todoDispatch]
+    );
+
+    const deleteTodo = useCallback(
+        async (id: number) => {
+            try {
+                await TodoAPI.deleteTodo(id);
+                todoDispatch({type: 'DELETE', payload: id});
+            } catch (e: unknown) {
+                console.error('API호출 실패');
+            }
+        },
+        [todoDispatch]
+    );
+    return {getTodo, createTodo, updateTodo, deleteTodo};
 };
 
 export default TodoController;
