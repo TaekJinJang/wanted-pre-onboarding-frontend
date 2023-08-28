@@ -103,3 +103,19 @@ export const TodoUpdateFormStyled = styled.form`
     align-items: center;
     flex: 1;
 `;
+export const Empty = styled.div`
+    box-sizing: border-box;
+    margin: 100px 0;
+    p {
+        color: lightgray;
+        font-weight: 800;
+        text-align: center;
+    }
+    img {
+        opacity: 0.1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+`;
