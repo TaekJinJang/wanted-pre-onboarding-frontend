@@ -1,7 +1,7 @@
-import TodoTitle from '../components/Todo/TodoTitle';
+import TodoContainer from '../containers/TodoContainer';
 
 const Todo = () => {
-    return <TodoTitle />;
+    return <TodoContainer />;
 };
 
 export default Todo;
