@@ -1,10 +1,10 @@
 import {useEffect, useState} from 'react';
-import TodoController from '../components/Todo/TodoController';
-import TodoCreate from '../components/Todo/TodoCreate';
+import TodoController from '../components/todo/TodoController';
+import TodoCreate from '../components/todo/TodoCreate';
 
 import * as S from '../styles/Todo.styled';
 import {useTodoState} from '../contexts/TodoContext';
-import TodoItem from '../components/Todo/TodoItem';
+import TodoItem from '../components/todo/TodoItem';
 
 const TodoContainer = () => {
     const todoState = useTodoState();
