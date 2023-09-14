@@ -5,6 +5,7 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Todo from './pages/Todo';
 import {redirectSignin, redirectTodo} from './utils/redirect';
+import NotFound from './pages/NotFound';
 
 export const Router = createBrowserRouter([
     {
@@ -32,5 +33,6 @@ export const Router = createBrowserRouter([
                 loader: redirectSignin,
             },
         ],
+        errorElement: <NotFound />,
     },
 ]);
