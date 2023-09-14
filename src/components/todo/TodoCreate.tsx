@@ -14,8 +14,12 @@ const TodoCreate = ({createTodo}: TodoCreateProps) => {
     const handleFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const value = inputRef.current?.value || null;
-        if (value) {
-            createTodo(value);
+        if (value && value !== '') {
+            createTodo(value || '');
+        }
+        if (inputRef.current) {
+            inputRef.current.value = '';
+            inputRef.current.focus();
         }
     };
     return (
