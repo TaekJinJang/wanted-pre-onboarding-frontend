@@ -1,4 +1,9 @@
 # 원티드 프리온보딩 프론트엔드 - 선발 과제
+## 🥳 과제 제출 이후 리팩토링을 진행하였습니다 !
+ - 팀원들과 best practice에 대해 토론하며, 제가 간과했던 부분을 보완하기 위해 리팩토링을 진행하였습니다.
+ - [리팩토링 브랜치 바로가기](https://github.com/TaekJinJang/wanted-pre-onboarding-frontend/tree/refactor/context-API)
+<br/>
+
 ## 지원자의 성명 : 장택진
 ## 프로젝트 실행 방법
 ```
