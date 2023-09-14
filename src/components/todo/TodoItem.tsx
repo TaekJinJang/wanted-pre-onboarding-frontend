@@ -33,7 +33,7 @@ const TodoItem = ({item, updateTodo, deleteTodo, updateId, setUpdateId}: TodoIte
 
     return (
         <li>
-            <S.TodoItemStyled>
+            <S.TodoItemStyled className={isCompleted.toString()}>
                 {updateMode ? (
                     <>
                         <S.TodoUpdateFormStyled onSubmit={handleUpdateSubmit}>
